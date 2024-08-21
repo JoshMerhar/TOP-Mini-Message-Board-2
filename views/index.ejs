@@ -1,0 +1,18 @@
+<html>
+    <header>
+        <title>Mini Message Board Home</title>
+    </header>
+    <body>
+        <h2><%= title %></h2>
+        <a href="/new">Add a message</a>
+        <ul>
+            <% messages.forEach((message) => { %>
+                <li><%= message.text %>
+                    <span> | Written by: <%= message.user %></span>
+                    <span> | Submitted: <%= message.added %></span>
+                    <span> | <a href="/messages/<%= message.id %>">Open message</a></span>
+                </li>
+            <% }); %>
+        </ul>
+    </body>
+</html>
